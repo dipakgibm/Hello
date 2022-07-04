@@ -1,0 +1,49 @@
+import React from "react";
+import "./App.css";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import { Col } from "react-bootstrap";
+import { Header } from "./Components/header/Header";
+import { Dashboard } from "./Components/dashboard/Dashboard";
+import { Footer } from "./Components/footer/Footer";
+import { Categories } from "./Components/dashboard/Categories";
+
+// import {BrowserRouter as Router, Routes, Route,useRoutes} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+
+class App extends React.Component {
+  
+  render() {
+    return (
+      <div className="main-content">
+        <Container fluid>
+          <Row className="row-header">
+            <Header />
+          </Row>
+          <Row className="row-main">
+            <Col xs={2} />
+            <Col xs={8}>
+ 
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Dashboard />}>
+          <Route path="Dashboard" element={<Dashboard />} />
+          <Route path="Categories" element={<Categories />} />
+
+        </Route>
+      </Routes>
+    </BrowserRouter>
+
+            </Col>
+            <Col xs={2} />
+          </Row>
+          <Row className="row-footer">
+            <Footer />
+          </Row>
+        </Container>
+      </div>
+    );
+  }
+}
+export default App;
