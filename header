@@ -1,0 +1,29 @@
+import React from "react";
+import { Navbar,NavDropdown } from "react-bootstrap";
+import { Dropdown,DropdownButton,Form,FormControl,Button } from "react-bootstrap";
+import "./Header.css"
+export const Header = () => {
+  return (
+    <Navbar bg="primary" variant="dark" fixed="top" className="justify-content-center" size="lg">
+      <Navbar.Brand href="/">India Today</Navbar.Brand>
+      <Navbar.Brand href="/Dashboard">Trending</Navbar.Brand>
+
+      <DropdownButton id="dropdown-basic-button" title="Categories" size="lg" >
+      <Dropdown.Item href="/Business">Business</Dropdown.Item>
+      <Dropdown.Item href="/Sports">Sports</Dropdown.Item>
+      <Dropdown.Item href="/Entertainment">Entertainment</Dropdown.Item>
+    </DropdownButton>
+
+    <Form className="d-flex">
+        <FormControl
+          type="search"
+          placeholder="Search"
+          className="me-2"
+          aria-label="Search"
+         
+        />
+        <Button type="submit">Search</Button>
+      </Form>
+    </Navbar>
+  );
+};
